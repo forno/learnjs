@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash -i
 
 abspath="$(cd "${0%/*}" 2>/dev/null; echo "$PWD"/"${0##*/}")"
 root_dir=`dirname "$abspath"`
 app_name=learnjs
 code_bucket=${app_name}/_code_bundles
-profile=admin
+profile=default
 
 function check_python() {
   if ! which python > /dev/null; then
@@ -14,10 +14,10 @@ function check_python() {
 }
 
 function check_aws() {
-  if ! which aws > /dev/null; then
-    echo "Can't find AWS CLI. Install 'awscli' using pip."
-    exit 1
-  fi
+  # if ! which aws > /dev/null; then
+  #   echo "Can't find AWS CLI. Install 'awscli' using pip."
+  #   exit 1
+  # fi
   if ! aws configure list --profile $profile > /dev/null; then
     echo "Run \`aws configure --profile $profile\` to create it"
     exit 1
