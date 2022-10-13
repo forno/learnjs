@@ -14,4 +14,11 @@ describe('LearnJS', () => {
     learnjs.showView('#problem-42');
     expect(learnjs.problemView).toHaveBeenCalledWith('42');
   });
+
+  describe('problem view', () => {
+    it('has a title that includes the problem number', () => {
+      const view = learnjs.problemView('1')
+      expect(view.textContent).toEqual('Problem #1 Coming soon!');
+    })
+  })
 });
