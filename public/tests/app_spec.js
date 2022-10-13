@@ -1,7 +1,7 @@
 describe('LearnJS', () => {
   it('can showa problem view', () => {
     learnjs.showView('#problem-1');
-    expect($('.view-container .problem-view').length).toEqual(1);
+    expect(document.querySelectorAll('.view-container .problem-view').length).toEqual(1);
   })
 
   it('shows the landing page view when there is no hash', () => {
