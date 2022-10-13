@@ -21,6 +21,13 @@ describe('LearnJS', () => {
     expect(learnjs.showView).toHaveBeenCalledWith(globalThis.location.hash);
   });
 
+  it('subscribes to the hash change event', () => {
+    learnjs.appOnReady();
+    spyOn(learnjs, 'showView');
+    document.dispatchEvent(new HashChangeEvent('hashchange', { bubbles: true }));
+    expect(learnjs.showView).toHaveBeenCalledWith(globalThis.location.hash);
+  });
+
   describe('problem view', () => {
     it('has a title that includes the problem number', () => {
       const view = learnjs.problemView('1')
