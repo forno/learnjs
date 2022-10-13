@@ -6,9 +6,9 @@ learnjs.removeAllChildren = (element) => {
   }
 }
 
-learnjs.problemView = () => {
+learnjs.problemView = (problemNumber) => {
   const problemView = document.createElement('div');
-  problemView.textContent = 'Coming soon!';
+  problemView.textContent = `Problem #${problemNumber} Coming soon!`;
   problemView.classList.add('problem-view');
   return problemView;
 }
