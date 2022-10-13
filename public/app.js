@@ -7,9 +7,8 @@ learnjs.removeAllChildren = (element) => {
 }
 
 learnjs.problemView = (problemNumber) => {
-  const problemView = document.createElement('div');
-  problemView.textContent = `Problem #${problemNumber} Coming soon!`;
-  problemView.classList.add('problem-view');
+  const problemView = document.querySelector('.templates .problem-view').cloneNode(true);
+  problemView.querySelector('.title').textContent = `Problem #${problemNumber} Coming soon!`;
   return problemView;
 }
 
