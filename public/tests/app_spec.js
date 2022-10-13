@@ -30,8 +30,18 @@ describe('LearnJS', () => {
 
   describe('problem view', () => {
     it('has a title that includes the problem number', () => {
-      const view = learnjs.problemView('1')
-      expect(view.textContent).toEqual('Problem #1 Coming soon!');
-    })
+      const view = learnjs.problemView('1');
+      expect(view.querySelector('.title').textContent).toEqual('Problem #1');
+    });
+
+    it('shows the description', () => {
+      const view = learnjs.problemView('1');
+      expect(view.querySelector('[data-name="description"').textContent).toEqual('What is truth?');
+    });
+
+    it('shows the problem code', () => {
+      const view = learnjs.problemView('1');
+      expect(view.querySelector('[data-name="code"').textContent).toEqual('function problem() { return __; }');
+    });
   })
 });
