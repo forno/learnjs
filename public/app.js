@@ -25,3 +25,7 @@ learnjs.showView = (hash) => {
     container.append(viewFn(hashParts[1]));
   }
 }
+
+learnjs.appOnReady = () => {
+  learnjs.showView(globalThis.location.hash);
+}
