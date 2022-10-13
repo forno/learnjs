@@ -6,6 +6,8 @@ learnjs.removeAllChildren = (element) => {
   }
 }
 
+learnjs.formatCode = (problem) => problem
+
 learnjs.problems = [
   {
     description: 'What is truth?',
@@ -16,6 +18,8 @@ learnjs.problems = [
     code: 'function problem() { return 42 ==== 6 * __; }'
   },
 ]
+
+learnjs.formattedProblems = learnjs.problems.map(learnjs.formatCode);
 
 learnjs.applyObject = (obj, elem) => {
   for (const key in obj) {
