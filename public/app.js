@@ -27,5 +27,6 @@ learnjs.showView = (hash) => {
 }
 
 learnjs.appOnReady = () => {
+  globalThis.addEventListener('hashchange', () => learnjs.showView(globalThis.location.hash));
   learnjs.showView(globalThis.location.hash);
 }
