@@ -15,12 +15,13 @@ learnjs.problemView = () => {
 
 learnjs.showView = (hash) => {
   const routes = {
-    '#problem-1': learnjs.problemView
+    '#problem': learnjs.problemView
   }
-  const viewFn = routes[hash];
+  const hashParts = hash.split('-')
+  const viewFn = routes[hashParts[0]];
   if (viewFn) {
     const container = document.querySelector('.view-container');
     learnjs.removeAllChildren(container);
-    container.append(viewFn());
+    container.append(viewFn(hashParts[1]));
   }
 }
